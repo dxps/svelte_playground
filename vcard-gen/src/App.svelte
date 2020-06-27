@@ -4,6 +4,7 @@
   import VCard from "./Sections/VCard.svelte";
 
   let qrCode = "";
+  let values;
 </script>
 
 <style>
@@ -17,8 +18,9 @@
 <Navbar title="vCard Generator" />
 <main>
   <Form
+    bind:values
     on:createQRCode={e => {
       qrCode = e.detail;
     }} />
-  <VCard {qrCode} />
+  <VCard {values} {qrCode} />
 </main>

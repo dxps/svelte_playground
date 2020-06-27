@@ -1,5 +1,16 @@
 <script>
   export let qrCode = false;
+  export let values = {
+    name: "",
+    organisation: "",
+    jobTitle: "",
+    phone: "",
+    address: "",
+    email: "",
+    photoURL: "",
+    logoURL: "",
+    backgroundURL: ""
+  };
 </script>
 
 <style>
@@ -23,4 +34,8 @@
   }
 </style>
 
-<section>{qrCode}</section>
+<section>
+  {values.name} {values.organisation} {values.jobTitle} {values.phone}
+  {values.address} {values.email} {values.photoURL} {values.logoURL}
+  {values.backgroundURL} {qrCode}
+</section>
