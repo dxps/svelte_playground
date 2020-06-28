@@ -108,7 +108,10 @@
   input {
     width: 70%;
     margin: 0 0.5rem;
+    background-color: #2a393c;
     border-radius: 5px;
+    border-color: #72c0a9;
+    color: #72c0a9;
   }
   article {
     display: flex;
@@ -118,6 +121,9 @@
     margin: 0.5rem 0;
     cursor: pointer;
     border-radius: 5px;
+    border-color: #2a393c;
+    background-color: #345052;
+    color: #72c0a9;
   }
   .labelText {
     text-align: end;

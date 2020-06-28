@@ -6,7 +6,8 @@ body {
 }
 
 body {
-	color: #333;
+	background-color: #2a393c;
+	color: #72c0a9;
 	margin: 0;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
