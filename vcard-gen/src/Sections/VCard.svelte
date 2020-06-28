@@ -59,44 +59,60 @@
 <section style="--bg-image: {'url(' + values.backgroundURL + ')'}">
   <Flex justify={'space-between'} align={'start'}>
     <Flex direction={'column'}>
-      <picture>
-        <img id="photo" src={values.photoURL} alt="avatar" />
-      </picture>
+      {#if values.photoURL}
+        <picture>
+          <img id="photo" src={values.photoURL} alt="avatar" />
+        </picture>
+      {/if}
       <h1>{values.name}</h1>
-      <h3>{values.jobTitle}</h3>
-      <Flex>
-        <picture class="logo">
-          <img
-            src="https://icongr.am/entypo/old-phone.svg?size=20&color=ffffff"
-            alt="phone" />
-        </picture>
-        <span>{values.phone}</span>
-      </Flex>
-      <Flex>
-        <picture class="logo">
-          <img
-            src="https://icongr.am/entypo/address.svg?size=20&color=ffffff"
-            alt="address" />
-        </picture>
-        <span>{values.address}</span>
-      </Flex>
-      <Flex>
-        <picture class="logo">
-          <img
-            src="https://icongr.am/entypo/email.svg?size=20&color=ffffff"
-            alt="email" />
-        </picture>
-        <span>{values.email}</span>
-      </Flex>
+      {#if values.jobTitle}
+        <h3>{values.jobTitle}</h3>
+      {/if}
+      {#if values.phone}
+        <Flex>
+          <picture class="logo">
+            <img
+              src="https://icongr.am/entypo/old-phone.svg?size=20&color=ffffff"
+              alt="phone" />
+          </picture>
+          <span>{values.phone}</span>
+        </Flex>
+      {/if}
+      {#if values.address}
+        <Flex>
+          <picture class="logo">
+            <img
+              src="https://icongr.am/entypo/address.svg?size=20&color=ffffff"
+              alt="address" />
+          </picture>
+          <span>{values.address}</span>
+        </Flex>
+      {/if}
+      {#if values.email}
+        <Flex>
+          <picture class="logo">
+            <img
+              src="https://icongr.am/entypo/email.svg?size=20&color=ffffff"
+              alt="email" />
+          </picture>
+          <span>{values.email}</span>
+        </Flex>
+      {/if}
     </Flex>
     <Flex direction={'column'} align={'end'}>
       <Flex align="center">
-        <picture class="logo">
-          <img src={values.logoURL} alt="email" />
-        </picture>
-        <h2>{values.organisation}</h2>
+        {#if values.logoURL}
+          <picture class="logo">
+            <img src={values.logoURL} alt="logo" />
+          </picture>
+        {/if}
+        {#if values.organisation}
+          <h2>{values.organisation}</h2>
+        {/if}
       </Flex>
-      <picture id="qrcode">{qrCode}</picture>
+      {#if qrCode}
+        <picture id="qrcode">{qrCode}</picture>
+      {/if}
     </Flex>
   </Flex>
 </section>
