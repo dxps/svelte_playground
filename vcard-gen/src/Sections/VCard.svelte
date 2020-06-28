@@ -13,6 +13,21 @@
     logoURL: "",
     backgroundURL: ""
   };
+
+  // qrString is formatted according to vCard 4.0 standard.
+  // (see https://tools.ietf.org/html/rfc6350)
+  $: qrString = `BEGIN:VCARD
+VERSION:4.0
+N:${values.name};${values.name};;;
+FN:${values.name}
+ORG:${values.organisation}
+TITLE:${values.jobTitle}
+TEL;TYPE=work;VALUE=uri:${values.phone}
+ADR;TYPE=WORK;PREF=1;LABEL="${values.address}":;;${values.address}
+EMAIL;TYPE=WORK:${values.email}
+REV:20080424T195243Z
+x-qq:21588891
+END:VCARD`;
 </script>
 
 <style>
@@ -111,7 +126,11 @@
         {/if}
       </Flex>
       {#if qrCode}
-        <picture id="qrcode">{qrCode}</picture>
+        <picture id="qrcode">
+          <img
+            src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURI(qrString)}`}
+            alt="qrcode" />
+        </picture>
       {/if}
     </Flex>
   </Flex>

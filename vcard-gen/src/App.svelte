@@ -3,7 +3,7 @@
   import Form from "./UI/Form.svelte";
   import VCard from "./Sections/VCard.svelte";
 
-  let qrCode = "";
+  let qrCode = false;
   let values;
 </script>
 

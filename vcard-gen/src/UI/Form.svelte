@@ -95,6 +95,7 @@
 
   function keyPressed(event) {
     event.key === "Shift" ? "" : (disabled = false);
+    dispatch("createQRCode", false);
   }
 </script>
 
@@ -276,7 +277,7 @@
     <button {disabled} on:click|preventDefault={resetClicked}>Reset</button>
     <button
       on:click|preventDefault={() => {
-        dispatch('createQRCode', 'QR Code goes here');
+        dispatch('createQRCode', true);
       }}>
       Create QR Code
     </button>
