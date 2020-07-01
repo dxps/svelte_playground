@@ -7,8 +7,8 @@
     width: 100%;
     font-size: 2rem;
     padding: 0.5rem 0;
-    background-color: #333;
-    color: #fff;
+    background-color: #345052;
+    color: rgb(182, 250, 218);
     text-align: center;
   }
 </style>
