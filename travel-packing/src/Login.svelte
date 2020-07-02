@@ -1,5 +1,4 @@
 <script>
-  import Login from "./Login.svelte";
   let username = "";
   let password = "";
 

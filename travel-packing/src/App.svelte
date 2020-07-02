@@ -1,7 +1,5 @@
 <script>
   import Login from "./Login.svelte";
-
-  export let name;
 </script>
 
 <style>
