@@ -1,6 +1,9 @@
 <script>
   import Category from "./Category.svelte";
   import { getGuid, sortOnName } from "./util";
+  import { createEventDispatcher } from "svelte";
+
+  const dispatch = createEventDispatcher();
 
   let categoryArray = [];
   let categories = {};
@@ -24,6 +27,11 @@
     categories[id] = { id, name: categoryName, items: {} };
     categories = categories;
     categoryName = "";
+  }
+
+  function deleteCategory(category) {
+    delete categories[category.id];
+    categories = categories;
   }
 
   function clearAllChecks() {
@@ -97,7 +105,9 @@
         <input bind:value={categoryName} />
       </label>
       <button disabled={!categoryName}>Add Category</button>
-      <button class="logout-btn">Log Out</button>
+      <button class="logout-btn" on:click={() => dispatch('logout')}>
+        Log Out
+      </button>
     </form>
     <p>
       Suggested categories include Backpack, Clothes,
@@ -126,7 +136,11 @@
 
   <div class="categories">
     {#each categoryArray as category (category.id)}
-      <Category bind:category {categories} {show} />
+      <Category
+        bind:category
+        {categories}
+        {show}
+        on:deleteCateg={() => deleteCategory(category)} />
     {/each}
   </div>
 </section>

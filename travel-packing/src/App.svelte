@@ -1,6 +1,8 @@
 <script>
   import Checklist from "./Checklist.svelte";
-  // import Login from "./Login.svelte";
+  import Login from "./Login.svelte";
+
+  let page = Login;
 </script>
 
 <style>
@@ -32,7 +34,13 @@
 </style>
 
 <main>
+
   <h1 class="hero">Travel Packing Checklist</h1>
-  <!-- <Login /> -->
-  <Checklist />
+
+  {#if page === Login}
+    <Login on:login={() => (page = Checklist)} />
+  {:else}
+    <Checklist on:logout={() => (page = Login)} />
+  {/if}
+
 </main>
