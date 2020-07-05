@@ -4,8 +4,9 @@
 
   export let item;
 
-  let editing = false;
   const dispatch = createEventDispatcher();
+
+  let editing = false;
 </script>
 
 <style>

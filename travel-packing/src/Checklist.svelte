@@ -42,6 +42,21 @@
     }
     categories = categories;
   }
+
+  restore();
+
+  $: if (categories) persist();
+
+  function persist() {
+    localStorage.setItem("travel-packing", JSON.stringify(categories));
+  }
+
+  function restore() {
+    const text = localStorage.getItem("travel-packing");
+    if (text && text !== "{}") {
+      categories = JSON.parse(text);
+    }
+  }
 </script>
 
 <style>
@@ -140,7 +155,8 @@
         bind:category
         {categories}
         {show}
-        on:deleteCateg={() => deleteCategory(category)} />
+        on:deleteCateg={() => deleteCategory(category)}
+        on:persist={persist} />
     {/each}
   </div>
 </section>

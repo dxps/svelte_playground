@@ -35,6 +35,7 @@
     items[id] = { id, name: itemName, packed: false };
     category.items = items;
     itemName = "";
+    dispatch("persist");
   }
 
   function deleteItem(item) {
@@ -124,7 +125,7 @@
 
   <ul>
     {#each itemsToShow as item (item.id)}
-      <!-- This bind causes the category object to update when the item's packed value is toggled. -->
+      <!-- This `bind:item` causes the category object to update when the item's packed value is toggled. -->
       <Item bind:item on:deleteItem={() => deleteItem(item)} />
     {:else}
       <div>No items.</div>
