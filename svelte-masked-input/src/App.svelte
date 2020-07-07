@@ -12,10 +12,9 @@
     margin: 0 auto;
   }
 
-  h1 {
+  h3 {
     color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
+    font-size: 2em;
     font-weight: 100;
   }
 
@@ -28,9 +27,13 @@
 
 <!-- UI -->
 
-<label>
-  Phone
-  <MaskedInput mask="(999)999-9999" bind:value={phone} />
-</label>
+<main>
+  <h3>MaskedInput Example</h3>
+  <label>
+    Phone
+    <MaskedInput mask="(999)999-9999" bind:value={phone} />
+  </label>
 
-<div>phone = {phone}</div>
+  <div>phone = {phone}</div>
+
+</main>
