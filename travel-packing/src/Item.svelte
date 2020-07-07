@@ -3,6 +3,8 @@
   import { createEventDispatcher } from "svelte";
 
   export let item;
+  export let categoryId; // The category it belongs to.
+  export let dnd; // An object that has `drag` and `drop` methods.
 
   const dispatch = createEventDispatcher();
 
@@ -52,7 +54,11 @@
       on:keydown={blurOnKey}
       type="text" />
   {:else}
-    <span class="packed-{item.packed}" on:click={() => (editing = true)}>
+    <span
+      class="packed-{item.packed}"
+      on:click={() => (editing = true)}
+      draggable="true"
+      on:dragstart={event => dnd.drag(event, categoryId, item.id)}>
       {item.name}
     </span>
   {/if}

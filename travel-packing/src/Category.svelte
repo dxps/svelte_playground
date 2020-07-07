@@ -1,4 +1,5 @@
 <script>
+  import Dialog from "./Dialog.svelte";
   import Item from "./Item.svelte";
   import { getGuid, blurOnKey, sortOnName } from "./util";
   import { createEventDispatcher } from "svelte";
@@ -6,13 +7,16 @@
   export let categories;
   export let category;
   export let show;
+  export let dnd; // An object that has `drag` and `drop` methods.
 
   const dispatch = createEventDispatcher();
 
+  let dialog = null; // The reference to the DOM dialog.
   let editing = false;
   let itemName = "";
   let items = [];
   let message = "";
+  let hovering = false; // While dragging, it becomes true.
 
   $: items = Object.values(category.items);
   $: remaining = items.filter(item => item.packed).length;
@@ -26,10 +30,9 @@
     );
     if (duplicate) {
       message = `The item ${itemName} already exists.`;
-      alert(message);
+      dialog.showModal();
       return;
     }
-
     const { items } = category;
     const id = getGuid();
     items[id] = { id, name: itemName, packed: false };
@@ -95,11 +98,26 @@
     margin: 0;
     padding-left: 0;
   }
+
+  .hover {
+    border-color: orange;
+  }
 </style>
 
 <!-- the UI markdown -->
 
-<section>
+<section
+  class:hover={hovering}
+  on:dragenter={() => (hovering = true)}
+  on:dragleave={event => {
+    const { localName } = event.target;
+    if (localName === 'section') hovering = false;
+  }}
+  on:drop|preventDefault={event => {
+    dnd.drop(event, category.id);
+    hovering = false;
+  }}
+  on:dragover|preventDefault>
   <h3>
     {#if editing}
       <input
@@ -126,9 +144,17 @@
   <ul>
     {#each itemsToShow as item (item.id)}
       <!-- This `bind:item` causes the category object to update when the item's packed value is toggled. -->
-      <Item bind:item on:deleteItem={() => deleteItem(item)} />
+      <Item
+        bind:item
+        categoryId={category.id}
+        {dnd}
+        on:deleteItem={() => deleteItem(item)} />
     {:else}
       <div>No items.</div>
     {/each}
   </ul>
 </section>
+
+<Dialog title="Category" bind:dialog>
+  <div>{message}</div>
+</Dialog>
