@@ -1,4 +1,5 @@
 <script>
+  import ItemInput from "./ItemInput.svelte";
   import { blurOnKey } from "./util";
   import { createEventDispatcher } from "svelte";
 
@@ -23,10 +24,6 @@
     width: var(--size);
   }
 
-  input[type="text"] {
-    border: solid lightgray 1px;
-  }
-
   li {
     display: flex;
     align-items: center;
@@ -47,12 +44,10 @@
 <li>
   <input type="checkbox" bind:checked={item.packed} />
   {#if editing}
-    <input
-      autofocus
+    <ItemInput
       bind:value={item.name}
       on:blur={() => (editing = false)}
-      on:keydown={blurOnKey}
-      type="text" />
+      on:keydown={blurOnKey} />
   {:else}
     <span
       class="packed-{item.packed}"
