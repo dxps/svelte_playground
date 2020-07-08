@@ -17,7 +17,6 @@
 	},
 	"dependencies": {
 		"page": "^1.11.6",
-		"query-string": "^6.13.1",
 		"sirv-cli": "^0.4.4"
 	}
 }
