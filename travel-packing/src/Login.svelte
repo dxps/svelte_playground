@@ -1,11 +1,8 @@
 <script>
   import { createEventDispatcher } from "svelte";
-
   const dispatch = createEventDispatcher();
-
-  let username = "";
   let password = "";
-
+  let username = "";
   const login = () => dispatch("login");
   const signup = () => alert("You pressed Signup.");
 </script>
@@ -14,20 +11,16 @@
   .buttons {
     display: flex;
     justify-content: space-between;
-
     font-size: 1.5rem;
     margin-top: 1rem;
   }
-
   form {
     display: inline-block;
   }
-
   input {
     display: block;
     margin-top: 0.3rem;
   }
-
   label {
     color: white;
     display: block;
@@ -35,8 +28,6 @@
     margin-top: 0.5rem;
   }
 </style>
-
-<!-- markup -->
 
 <section>
   <form on:submit|preventDefault={login}>
@@ -46,7 +37,7 @@
     </label>
     <label>
       Password
-      <input required bind:value={password} />
+      <input type="password" required bind:value={password} />
     </label>
     <div class="buttons">
       <button>Login</button>

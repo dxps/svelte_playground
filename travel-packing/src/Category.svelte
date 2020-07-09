@@ -1,35 +1,39 @@
 <script>
+  import { createEventDispatcher } from "svelte";
+  import { flip } from "svelte/animate";
+  import { linear } from "svelte/easing";
+  import { scale } from "svelte/transition";
   import Dialog from "./Dialog.svelte";
   import Item from "./Item.svelte";
   import { getGuid, blurOnKey, sortOnName } from "./util";
-  import { createEventDispatcher } from "svelte";
 
   export let categories;
   export let category;
+  export let dnd;
   export let show;
-  export let dnd; // An object that has `drag` and `drop` methods.
 
   const dispatch = createEventDispatcher();
+  const animationOpts = { duration: 300, easing: linear, times: 2 };
 
-  let dialog = null; // The reference to the DOM dialog.
+  let dialog = null;
   let editing = false;
+  let hovering = false;
   let itemName = "";
   let items = [];
   let message = "";
-  let hovering = false; // While dragging, it becomes true.
 
   $: items = Object.values(category.items);
-  $: remaining = items.filter(item => item.packed).length;
+  $: remaining = items.filter(item => !item.packed).length;
   $: total = items.length;
   $: status = `${remaining} of ${total} remaining`;
   $: itemsToShow = sortOnName(items.filter(i => shouldShow(show, i)));
 
   function addItem() {
-    const duplicate = Object.values(categories).some(categ =>
-      Object.values(categ.items).some(item => item.name === itemName)
+    const duplicate = Object.values(categories).some(cat =>
+      Object.values(cat.items).some(item => item.name === itemName)
     );
     if (duplicate) {
-      message = `The item ${itemName} already exists.`;
+      message = `The item "${itemName}" already exists.`;
       dialog.showModal();
       return;
     }
@@ -43,15 +47,32 @@
 
   function deleteItem(item) {
     delete category.items[item.id];
-    category = category;
+    category = category; // triggers update
+    dispatch("persist");
   }
 
   function shouldShow(show, item) {
     return (
       show === "all" ||
       (show === "packed" && item.packed) ||
-      (show == "unpacked" && !item.packed)
+      (show === "unpacked" && !item.packed)
     );
+  }
+
+  function spin(node, animationOpts) {
+    const { easing, times = 1 } = animationOpts;
+    return {
+      ...animationOpts,
+      css(t) {
+        const eased = easing(t);
+        const degrees = 360 * times; // through which to spin
+        return (
+          "transform-origin: 50% 50%; " +
+          `transform: scale(${eased}) ` +
+          `rotate(${eased * degrees}deg);`
+        );
+      }
+    };
   }
 </script>
 
@@ -60,22 +81,20 @@
   input {
     border: solid lightgray 1px;
   }
-
   button.icon {
     border: none;
   }
-
   h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin: 0;
   }
-
+  .hover {
+    border-color: orange;
+  }
   section {
-    --padding: 10px;
-
+    --padding: 0.5rem;
     background-color: white;
     border: solid transparent 3px;
     border-radius: var(--padding);
@@ -83,31 +102,30 @@
     display: inline-block;
     margin: var(--padding);
     padding: calc(var(--padding) * 2);
-    padding-top: var(--padding);
+    padding-top: 0;
     vertical-align: top;
   }
-
   .status {
-    font-size: 18px;
+    font-size: 1.2rem;
     font-weight: normal;
-    margin: 0 15px;
+    margin: 0 1rem;
   }
-
   ul {
+    display: flex;
+    flex-direction: column;
     list-style: none;
     margin: 0;
     padding-left: 0;
   }
-
-  .hover {
-    border-color: orange;
+  .wrapper {
+    display: inline;
   }
 </style>
 
-<!-- the UI markdown -->
-
 <section
   class:hover={hovering}
+  in:scale={animationOpts}
+  out:spin={animationOpts}
   on:dragenter={() => (hovering = true)}
   on:dragleave={event => {
     const { localName } = event.target;
@@ -136,19 +154,22 @@
   <form on:submit|preventDefault={addItem}>
     <label>
       New Item
-      <input bind:value={itemName} />
+      <input required bind:value={itemName} />
     </label>
-    <button disabled={!itemName}>Add Item</button>
+    <button>Add Item</button>
   </form>
 
   <ul>
-    {#each itemsToShow as item (item.id)}
-      <!-- This `bind:item` causes the category object to update when the item's packed value is toggled. -->
-      <Item
-        bind:item
-        categoryId={category.id}
-        {dnd}
-        on:deleteItem={() => deleteItem(item)} />
+    {#each itemsToShow as item (item)}
+      <div class="wrapper" animate:flip>
+        <!-- This bind causes the category object to update
+            when the item packed value is toggled. -->
+        <Item
+          bind:item
+          categoryId={category.id}
+          {dnd}
+          on:deleteItem={() => deleteItem(item)} />
+      </div>
     {:else}
       <div>No items.</div>
     {/each}

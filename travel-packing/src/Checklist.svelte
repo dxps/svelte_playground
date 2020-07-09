@@ -1,17 +1,21 @@
 <script>
-  import Dialog from "./Dialog.svelte";
-  import Category from "./Category.svelte";
-  import { getGuid, sortOnName } from "./util";
   import { createEventDispatcher } from "svelte";
+  import { flip } from "svelte/animate";
+  import Category from "./Category.svelte";
+  import Dialog from "./Dialog.svelte";
+  import { getGuid, sortOnName } from "./util";
 
   const dispatch = createEventDispatcher();
+  const animateOpts = { duration: 700 };
 
   let categoryArray = [];
   let categories = {};
   let categoryName;
-  let dialog = null; // reference to the DOM dialog
+  let dialog = null;
   let message = "";
   let show = "all";
+
+  $: categoryArray = sortOnName(Object.values(categories));
 
   let dragAndDrop = {
     drag(event, categoryId, itemId) {
@@ -23,14 +27,11 @@
       const data = JSON.parse(json);
       const category = categories[data.categoryId];
       const item = category.items[data.itemId];
-
       delete category.items[data.itemId];
       categories[categoryId].items[data.itemId] = item;
       categories = categories;
     }
   };
-
-  $: categoryArray = sortOnName(Object.values(categories));
 
   function addCategory() {
     const duplicate = Object.values(categories).some(
@@ -41,21 +42,10 @@
       dialog.showModal();
       return;
     }
-
     const id = getGuid();
     categories[id] = { id, name: categoryName, items: {} };
-    categories = categories;
-    categoryName = "";
-  }
-
-  function deleteCategory(category) {
-    if (Object.values(category.items).length) {
-      message = "This category cannot be deleted since it is not empty.";
-      dialog.showModal();
-      return;
-    }
-    delete categories[category.id];
-    categories = categories;
+    categories = categories; // trigger update
+    categoryName = ""; // clear the input
   }
 
   function clearAllChecks() {
@@ -67,8 +57,20 @@
     categories = categories;
   }
 
+  function deleteCategory(category) {
+    if (Object.values(category.items).length) {
+      message = "This category is not empty.";
+      dialog.showModal();
+      return;
+    }
+    delete categories[category.id];
+    categories = categories;
+  }
+
+  // Must do this before first call to persist.
   restore();
 
+  // Any time categories changes, persist it to localStorage.
   $: if (categories) persist();
 
   function persist() {
@@ -89,48 +91,33 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .clear {
-    margin-left: 30px;
+    margin-left: 2rem;
   }
-
   input[type="radio"] {
-    --size: 24px;
+    --size: 1.5rem;
     height: var(--size);
     width: var(--size);
-    margin-left: 10px;
   }
-
   .logout-btn {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 1rem;
+    top: 1rem;
   }
-
   .radios {
     display: flex;
     align-items: center;
   }
-
   .radios > label:not(:first-of-type) {
     display: inline-flex;
     align-items: center;
-
-    margin-left: 1em;
   }
-
-  .radios > label > input {
-    margin-bottom: -3px;
-    margin-right: 5px;
-  }
-
   section {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    font-size: 24px;
-    margin-top: 1em;
+    font-size: 1.5rem;
+    margin-top: 1rem;
   }
 </style>
 
@@ -141,9 +128,9 @@
     <form on:submit|preventDefault={addCategory}>
       <label>
         New Category
-        <input bind:value={categoryName} />
+        <input required bind:value={categoryName} />
       </label>
-      <button disabled={!categoryName}>Add Category</button>
+      <button>Add Category</button>
       <button class="logout-btn" on:click={() => dispatch('logout')}>
         Log Out
       </button>
@@ -175,13 +162,15 @@
 
   <div class="categories">
     {#each categoryArray as category (category.id)}
-      <Category
-        bind:category
-        {categories}
-        {show}
-        dnd={dragAndDrop}
-        on:deleteCateg={() => deleteCategory(category)}
-        on:persist={persist} />
+      <div animate:flip={animateOpts}>
+        <Category
+          bind:category
+          {categories}
+          {show}
+          dnd={dragAndDrop}
+          on:deleteCateg={() => deleteCategory(category)}
+          on:persist={persist} />
+      </div>
     {/each}
   </div>
 </section>
