@@ -1,0 +1,9 @@
+{
+	"include": ["src"],
+	"exclude": ["note_modules/*"],
+	"compilerOptions": {
+		"target": "es2019",
+		"types": ["svelte"],
+		"moduleResolution": "node"
+	}
+}

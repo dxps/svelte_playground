@@ -8,13 +8,17 @@
     "svelte": "^3.21.0"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.10.4",
     "@snowpack/app-scripts-svelte": "^1.2.0",
+    "@snowpack/plugin-babel": "^1.4.0",
     "@testing-library/jest-dom": "^5.5.0",
     "@testing-library/svelte": "^3.0.0",
-    "autoprefixer": "^9.8.4",
+    "autoprefixer": "^9.8.5",
+    "cssnano": "^4.1.10",
     "jest": "^25.4.0",
     "postcss-cli": "^7.1.1",
     "snowpack": "^2.6.4",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.4.6",
+    "typescript": "^3.9.6"
   }
 }

@@ -6,6 +6,8 @@ A demo project that uses:
 - Svelte
 - Tailwind CSS
 
+It started based on [Building a notification center with Svelte stores](https://codechips.me/building-notification-center-with-svelte-stores/) article.
+
 ## Run
 
 Use `npm start` to run the app in the development mode (the page reloads itself on changes), accessing it in the browser at [localhost:8080](http://localhost:8080).
