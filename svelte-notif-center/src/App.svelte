@@ -1,44 +1,12 @@
 <script>
-  // Main stylesheet. Snowpack will inject it in the head tag.
+  // The main stylesheet that Snowpack will inject it in the head tag.
   import "./main.css";
-
-  const message = "Learn Svelte";
 </script>
 
 <style>
   :global(body) {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-  }
-  .App {
-    text-align: center;
-  }
-  .App-header {
-    background-color: #f9f6f6;
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-  }
-  .App-link {
-    color: #ff3e00;
-  }
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-    margin-bottom: 1rem;
-    animation: App-logo-spin infinite 1.6s ease-in-out alternate;
-  }
-  @keyframes App-logo-spin {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.06);
-    }
   }
 
   /* unread message count */
@@ -56,13 +24,14 @@
     min-height: 18px;
     text-align: center;
   }
+
   /* custom width for message popup */
   .messages {
     min-width: 400px;
   }
 </style>
 
-<div class="container flex flex-col max-w-4xl min-h-screen mx-auto">
+<div class="flex flex-col min-h-screen">
   <!-- top menu -->
   <header
     class="flex items-center justify-between px-5 py-3 text-gray-400 bg-gray-700">
