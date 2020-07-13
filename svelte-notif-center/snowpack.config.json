@@ -5,6 +5,8 @@
 		"run:tsc::watch": "$1 --watch",
 		"build:css": "postcss"
 	},
-	"devOptions": {},
+	"devOptions": {
+		"open": "none"
+	},
 	"installOptions": {}
 }
