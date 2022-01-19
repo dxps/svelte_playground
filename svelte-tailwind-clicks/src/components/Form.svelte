@@ -22,5 +22,5 @@
     <span class="label-text">Post Text</span>
   </label>
   <textarea name="post" bind:value={post} class="textarea h-24 textarea-bordered" placeholder="" />
-  <button on:click={() => sendAddPost} class="btn btn-primary mt-4">Post</button>
+  <button on:click={() => sendAddPost()} class="btn btn-primary mt-4">Post</button>
 </div>
