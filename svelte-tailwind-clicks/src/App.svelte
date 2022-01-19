@@ -8,17 +8,26 @@
 
   let posts = data.data
 
+  let arrayInc = 3
+
   function addPost(author, post) {
     const _post = {
-      id: posts.length + 1,
+      id: ++arrayInc,
       author: author,
       post: post,
     }
 
     posts.push(_post)
+    // To inform Svelte about the array change.
     posts = posts
-    console.log('addPost > Navigating to "/posts"')
     navigate('posts')
+  }
+
+  function removePost(id) {
+    const removeIdx = posts.findIndex((post) => post.id == id)
+    posts.splice(removeIdx, 1)
+    // To inform Svelte again about the array change.
+    posts = posts
   }
 </script>
 
@@ -33,7 +42,7 @@
     <Route path="posts">
       <div class="overflow-auto space-y-4 p-4">
         {#each posts.reverse() as post}
-          <Post {...post} />
+          <Post {...post} {removePost} />
         {/each}
       </div>
     </Route>
