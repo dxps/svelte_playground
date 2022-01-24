@@ -6,6 +6,7 @@ import SignUpPage from './SignUpPage.svelte'
 import { render, screen } from '@testing-library/svelte'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
+import axios from 'axios'
 
 describe("Sign Up Page", () => {
 
@@ -67,17 +68,45 @@ describe("Sign Up Page", () => {
 
     describe("Interactions", () => {
 
-        it("enables the button when password fields have the same value", async () => {
-            render(SignUpPage)
-            const passwordInput = screen.getByLabelText("Password")
-            const passwordRepeatInput = screen.getByLabelText("Password Repeat")
-            // Note: Keep this 'await', even though you might get this hint from your tooling:
-            // 'await' has no effect on the type of this expression.ts(80007)
-            await userEvent.type(passwordInput, "P455word")
-            await userEvent.type(passwordRepeatInput, "P455word")
-            const button = screen.getByRole('button', { name: 'Sign Up' })
-            expect(button).toBeEnabled()
-        })
+        it("enables the button when password fields have the same value",
+            async () => {
+                render(SignUpPage)
+                const passwordInput = screen.getByLabelText("Password")
+                const passwordRepeatInput = screen.getByLabelText("Password Repeat")
+                // Note: Keep this 'await', even though you might get this hint from your tooling:
+                // 'await' has no effect on the type of this expression.ts(80007)
+                await userEvent.type(passwordInput, "P455word")
+                await userEvent.type(passwordRepeatInput, "P455word")
+                const button = screen.getByRole('button', { name: 'Sign Up' })
+                expect(button).toBeEnabled()
+            })
+
+        it("sends sign up form fields to backend after clicking the button",
+            async () => {
+                render(SignUpPage)
+                const usernameInput = screen.getByLabelText("Username")
+                const emailInput = screen.getByLabelText("Email")
+                const passwordInput = screen.getByLabelText("Password")
+                const passwordRepeatInput = screen.getByLabelText("Password Repeat")
+                await userEvent.type(usernameInput, "user1")
+                await userEvent.type(emailInput, "user1@mail.com")
+                await userEvent.type(passwordInput, "P455word")
+                await userEvent.type(passwordRepeatInput, "P455word")
+                const button = screen.getByRole('button', { name: 'Sign Up' })
+
+                const mockFn = jest.fn()
+                axios.post = mockFn
+
+                await userEvent.click(button)
+
+                const firstCall = mockFn.mock.calls[0] // Getting the first call done through Axios.
+                const body = firstCall[1] // axios.post() has two params: url, and payload/body.
+                expect(body).toEqual({
+                    username: 'user1',
+                    email: 'user1@mail.com',
+                    password: 'P455word'
+                })
+            })
 
     })
 
