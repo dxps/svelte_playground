@@ -7,6 +7,8 @@ import { render, screen } from '@testing-library/svelte'
 import '@testing-library/jest-dom'
 import userEvent from '@testing-library/user-event'
 import axios from 'axios'
+import { rest } from 'msw'
+import { setupServer } from 'msw/node'
 
 describe("Sign Up Page", () => {
 
@@ -83,6 +85,16 @@ describe("Sign Up Page", () => {
 
         it("sends sign up form fields to backend after clicking the button",
             async () => {
+
+                let reqBody;
+                const server = setupServer(
+                    rest.post("/api/1.0/users", (req, res, ctx) => {
+                        reqBody = req.body
+                        return res(ctx.status(200))
+                    })
+                )
+                server.listen()
+
                 render(SignUpPage)
                 const usernameInput = screen.getByLabelText("Username")
                 const emailInput = screen.getByLabelText("Email")
@@ -94,14 +106,19 @@ describe("Sign Up Page", () => {
                 await userEvent.type(passwordRepeatInput, "P455word")
                 const button = screen.getByRole('button', { name: 'Sign Up' })
 
-                const mockFn = jest.fn()
-                axios.post = mockFn
+                // const mockFn = jest.fn()
+                // axios.post = mockFn
 
                 await userEvent.click(button)
 
-                const firstCall = mockFn.mock.calls[0] // Getting the first call done through Axios.
-                const body = firstCall[1] // axios.post() has two params: url, and payload/body.
-                expect(body).toEqual({
+                // const firstCall = mockFn.mock.calls[0] // Getting the first call done through Axios.
+                // const body = firstCall[1] // axios.post() has two params: url, and payload/body.
+
+                // As a workaround to have the request processed,
+                // thus properly capturing the reqBody.
+                server.close()
+
+                expect(reqBody).toEqual({
                     username: 'user1',
                     email: 'user1@mail.com',
                     password: 'P455word'
