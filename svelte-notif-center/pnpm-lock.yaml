@@ -1359,8 +1359,8 @@ packages:
       rollup: 2.21.0
     dev: true
 
-  /@sindresorhus/is@3.0.0:
-    resolution: {integrity: sha512-kqA5I6Yun7PBHk8WN9BBP1c7FfN2SrD05GuVSEYPqDb4nerv7HqYfgBfMIKmT/EuejURkJKLZuLyGKGs6WEG9w==}
+  /@sindresorhus/is@4.6.0:
+    resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
     engines: {node: '>=10'}
     dev: true
 
@@ -2062,8 +2062,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /cacheable-request@7.0.1:
-    resolution: {integrity: sha512-lt0mJ6YAnsrBErpTMWeu5kl/tg9xMAWjavYTN6VQXM1A/teBITuNcccXsCxF0tDQQJf9DfAaX5O4e0zp0KlfZw==}
+  /cacheable-request@7.0.4:
+    resolution: {integrity: sha512-v+p6ongsrp0yTGbJXjgxPow2+DL93DASP4kXCDKb8/bwRtt9OEF3whggkkDkGNzgcWy2XaF4a8nZglC7uElscg==}
     engines: {node: '>=8'}
     dependencies:
       clone-response: 1.0.2
@@ -2071,7 +2071,7 @@ packages:
       http-cache-semantics: 4.1.0
       keyv: 4.0.1
       lowercase-keys: 2.0.0
-      normalize-url: 4.5.0
+      normalize-url: 6.1.0
       responselike: 2.0.0
     dev: true
 
@@ -2234,7 +2234,7 @@ packages:
     dev: true
 
   /clone-response@1.0.2:
-    resolution: {integrity: sha1-0dyXOSAxTfZ/vrlCI7TuNQI56Ws=}
+    resolution: {integrity: sha512-yjLXh88P599UOyPTFX0POsd7WxnbsVsGohcwzHOLspIhhpalPw1BcqED8NblyZLKcGrL8dTgMlcaZxV2jAD41Q==}
     dependencies:
       mimic-response: 1.0.1
     dev: true
@@ -3279,18 +3279,18 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /got@11.5.0:
-    resolution: {integrity: sha512-vOZEcEaK0b6x11uniY0HcblZObKPRO75Jvz53VKuqGSaKCM/zEt0sj2LGYVdqDYJzO3wYdG+FPQQ1hsgoXy7vQ==}
+  /got@11.8.6:
+    resolution: {integrity: sha512-6tfZ91bOr7bOXnK7PRDCGBLa1H4U080YHNaAQ2KsMGlLEzRbk44nsZF2E1IeRc3vtJHPVbKCYgdFbaGO2ljd8g==}
     engines: {node: '>=10.19.0'}
     dependencies:
-      '@sindresorhus/is': 3.0.0
+      '@sindresorhus/is': 4.6.0
       '@szmarczak/http-timer': 4.0.5
       '@types/cacheable-request': 6.0.1
       '@types/responselike': 1.0.0
       cacheable-lookup: 5.0.3
-      cacheable-request: 7.0.1
+      cacheable-request: 7.0.4
       decompress-response: 6.0.0
-      http2-wrapper: 1.0.0-beta.5.0
+      http2-wrapper: 1.0.3
       lowercase-keys: 2.0.0
       p-cancelable: 2.0.0
       responselike: 2.0.0
@@ -3435,8 +3435,8 @@ packages:
       sshpk: 1.16.1
     dev: true
 
-  /http2-wrapper@1.0.0-beta.5.0:
-    resolution: {integrity: sha512-yUzY7UQjB2uNg+xqOQLxdJ3QvaGpOrchBCmbyZ2zeC8I+CXrZtXfGp8VvyGz9W9Q4XVdq6+JYpclRiqWttZR+w==}
+  /http2-wrapper@1.0.3:
+    resolution: {integrity: sha512-V+23sDMr12Wnz7iTcDeJr3O6AIxlnvT/bmaAAAP/Xda35C90p9599p0F1eHR/N1KILWSoWVAiOMFjBBXaXSMxg==}
     engines: {node: '>=10.19.0'}
     dependencies:
       quick-lru: 5.1.1
@@ -4801,9 +4801,9 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /normalize-url@4.5.0:
-    resolution: {integrity: sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==}
-    engines: {node: '>=8'}
+  /normalize-url@6.1.0:
+    resolution: {integrity: sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A==}
+    engines: {node: '>=10'}
     dev: true
 
   /normalize.css@8.0.1:
@@ -4908,7 +4908,7 @@ packages:
     dev: true
 
   /once@1.4.0:
-    resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}
+    resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
       wrappy: 1.0.2
     dev: true
@@ -6041,7 +6041,7 @@ packages:
       find-cache-dir: 3.3.1
       find-up: 4.1.0
       glob: 7.1.6
-      got: 11.5.0
+      got: 11.8.6
       http-proxy: 1.18.1
       is-builtin-module: 3.0.0
       jsonschema: 1.2.6
@@ -6744,7 +6744,7 @@ packages:
     dev: true
 
   /wrappy@1.0.2:
-    resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
+    resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
   /write-file-atomic@3.0.3:
