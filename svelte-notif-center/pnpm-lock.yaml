@@ -79,7 +79,7 @@ packages:
       debug: 4.1.1
       gensync: 1.0.0-beta.1
       json5: 2.2.3
-      lodash: 4.17.19
+      lodash: 4.17.21
       resolve: 1.17.0
       semver: 5.7.1
       source-map: 0.5.7
@@ -92,7 +92,7 @@ packages:
     dependencies:
       '@babel/types': 7.10.4
       jsesc: 2.5.2
-      lodash: 4.17.19
+      lodash: 4.17.21
       source-map: 0.5.7
     dev: true
 
@@ -156,7 +156,7 @@ packages:
     dependencies:
       '@babel/helper-function-name': 7.10.4
       '@babel/types': 7.10.4
-      lodash: 4.17.19
+      lodash: 4.17.21
     dev: true
 
   /@babel/helper-explode-assignable-expression@7.10.4:
@@ -209,7 +209,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.10.4
       '@babel/template': 7.10.4
       '@babel/types': 7.10.4
-      lodash: 4.17.19
+      lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -227,7 +227,7 @@ packages:
   /@babel/helper-regex@7.10.4:
     resolution: {integrity: sha512-inWpnHGgtg5NOF0eyHlC0/74/VkdRITY9dtTpB2PrxKKn+AkVMRiZz/Adrx+Ssg+MLDesi2zohBW6MVq6b4pOQ==}
     dependencies:
-      lodash: 4.17.19
+      lodash: 4.17.21
     dev: true
 
   /@babel/helper-remap-async-to-generator@7.10.4:
@@ -590,7 +590,7 @@ packages:
     dependencies:
       '@babel/core': 7.10.4
       '@babel/helper-plugin-utils': 7.10.4
-      lodash: 4.17.19
+      lodash: 4.17.21
     dev: true
 
   /@babel/plugin-transform-classes@7.10.4(@babel/core@7.10.4):
@@ -1027,7 +1027,7 @@ packages:
       '@babel/types': 7.10.4
       debug: 4.1.1
       globals: 11.12.0
-      lodash: 4.17.19
+      lodash: 4.17.21
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1036,7 +1036,7 @@ packages:
     resolution: {integrity: sha512-UTCFOxC3FsFHb7lkRMVvgLzaRVamXuAs2Tz4wajva4WxtVY82eZeaUBtC2Zt95FU9TiznuC0Zk35tsim8jeVpg==}
     dependencies:
       '@babel/helper-validator-identifier': 7.10.4
-      lodash: 4.17.19
+      lodash: 4.17.21
       to-fast-properties: 2.0.0
     dev: true
 
@@ -1439,7 +1439,7 @@ packages:
       css.escape: 1.5.1
       jest-diff: 25.5.0
       jest-matcher-utils: 25.5.0
-      lodash: 4.17.19
+      lodash: 4.17.21
       redent: 3.0.0
     dev: true
 
@@ -4478,8 +4478,8 @@ packages:
     resolution: {integrity: sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=}
     dev: true
 
-  /lodash@4.17.19:
-    resolution: {integrity: sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==}
+  /lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: true
 
   /log-symbols@2.2.0:
@@ -5424,7 +5424,7 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       chalk: 2.4.2
-      lodash: 4.17.19
+      lodash: 4.17.21
       log-symbols: 2.2.0
       postcss: 7.0.32
     dev: true
@@ -5707,7 +5707,7 @@ packages:
     peerDependencies:
       request: ^2.34
     dependencies:
-      lodash: 4.17.19
+      lodash: 4.17.21
       request: 2.88.2
     dev: true
 
@@ -6359,7 +6359,7 @@ packages:
       color: 3.1.2
       detective: 5.2.0
       fs-extra: 8.1.0
-      lodash: 4.17.19
+      lodash: 4.17.21
       node-emoji: 1.10.0
       normalize.css: 8.0.1
       postcss: 7.0.32
