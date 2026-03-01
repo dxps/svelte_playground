@@ -10,11 +10,11 @@ importers:
     dependencies:
       svelte-navigator:
         specifier: ^3.1.5
-        version: 3.1.5(svelte@5.51.5)(typescript@4.9.5)
+        version: 3.1.5(svelte@5.53.5)(typescript@4.9.5)
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^1.0.0-next.30
-        version: 1.0.0-next.34(svelte@5.51.5)(vite@5.4.21)
+        version: 1.0.0-next.34(svelte@5.53.5)(vite@5.4.21)
       autoprefixer:
         specifier: ^10.4.2
         version: 10.4.2(postcss@8.4.31)
@@ -25,11 +25,11 @@ importers:
         specifier: ^8.4.31
         version: 8.4.31
       svelte:
-        specifier: ^5.51.5
-        version: 5.51.5
+        specifier: ^5.53.5
+        version: 5.53.5
       svelte-preprocess:
         specifier: ^4.10.1
-        version: 4.10.1(postcss-load-config@3.1.1)(postcss@8.4.31)(svelte@5.51.5)(typescript@4.9.5)
+        version: 4.10.1(postcss-load-config@3.1.1)(postcss@8.4.31)(svelte@5.53.5)(typescript@4.9.5)
       tailwindcss:
         specifier: ^3.0.12
         version: 3.0.15(autoprefixer@10.4.2(postcss@8.4.31))(postcss@8.4.31)
@@ -397,8 +397,8 @@ packages:
   arg@5.0.1:
     resolution: {integrity: sha512-e0hDa9H2Z9AwFkk2qDlwhoMYE4eToKarchkQHovNdLTCYMHZHeRjI71crOh+dio4K6u1IcwubQqo79Ga4CyAQA==}
 
-  aria-query@5.3.2:
-    resolution: {integrity: sha512-COROpnaoap1E2F000S62r6A60uHZnmlvomhfyT2DlTcrY1OrBKn2UhH7qn5wTC9zMvD0AY7csdPSNwKP+7WiQw==}
+  aria-query@5.3.1:
+    resolution: {integrity: sha512-Z/ZeOgVl7bcSYZ/u/rh0fOpvEpq//LZmdbkXyc7syVzjPAhfOa9ebsdTSjEBDU4vs5nC98Kfduj1uFo0qyET3g==}
     engines: {node: '>= 0.4'}
 
   autoprefixer@10.4.2:
@@ -924,8 +924,8 @@ packages:
       svelte: ^3.24
       typescript: ^4.1.2
 
-  svelte@5.51.5:
-    resolution: {integrity: sha512-/4tR5cLsWOgH3wnNRXnFoWaJlwPGbJanZPSKSD6nHM2y01dvXeEF4Nx7jevoZ+UpJpkIHh6mY2tqDncuI4GHng==}
+  svelte@5.53.5:
+    resolution: {integrity: sha512-YkqERnF05g8KLdDZwZrF8/i1eSbj6Eoat8Jjr2IfruZz9StLuBqo8sfCSzjosNKd+ZrQ8DkKZDjpO5y3ht1Pow==}
     engines: {node: '>=18'}
 
   tailwindcss@3.0.15:
@@ -1185,15 +1185,15 @@ snapshots:
     dependencies:
       acorn: 8.16.0
 
-  '@sveltejs/vite-plugin-svelte@1.0.0-next.34(svelte@5.51.5)(vite@5.4.21)':
+  '@sveltejs/vite-plugin-svelte@1.0.0-next.34(svelte@5.53.5)(vite@5.4.21)':
     dependencies:
       '@rollup/pluginutils': 4.1.2
       debug: 4.3.3
       kleur: 4.1.4
       magic-string: 0.25.7
       require-relative: 0.8.7
-      svelte: 5.51.5
-      svelte-hmr: 0.14.9(svelte@5.51.5)
+      svelte: 5.53.5
+      svelte-hmr: 0.14.9(svelte@5.53.5)
       vite: 5.4.21
     transitivePeerDependencies:
       - supports-color
@@ -1239,7 +1239,7 @@ snapshots:
 
   arg@5.0.1: {}
 
-  aria-query@5.3.2: {}
+  aria-query@5.3.1: {}
 
   autoprefixer@10.4.2(postcss@8.4.31):
     dependencies:
@@ -1705,18 +1705,18 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-hmr@0.14.9(svelte@5.51.5):
+  svelte-hmr@0.14.9(svelte@5.53.5):
     dependencies:
-      svelte: 5.51.5
+      svelte: 5.53.5
 
-  svelte-navigator@3.1.5(svelte@5.51.5)(typescript@4.9.5):
+  svelte-navigator@3.1.5(svelte@5.53.5)(typescript@4.9.5):
     dependencies:
-      svelte: 5.51.5
-      svelte2tsx: 0.1.193(svelte@5.51.5)(typescript@4.9.5)
+      svelte: 5.53.5
+      svelte2tsx: 0.1.193(svelte@5.53.5)(typescript@4.9.5)
     transitivePeerDependencies:
       - typescript
 
-  svelte-preprocess@4.10.1(postcss-load-config@3.1.1)(postcss@8.4.31)(svelte@5.51.5)(typescript@4.9.5):
+  svelte-preprocess@4.10.1(postcss-load-config@3.1.1)(postcss@8.4.31)(svelte@5.53.5)(typescript@4.9.5):
     dependencies:
       '@types/pug': 2.0.6
       '@types/sass': 1.43.1
@@ -1724,20 +1724,20 @@ snapshots:
       magic-string: 0.25.7
       sorcery: 0.10.0
       strip-indent: 3.0.0
-      svelte: 5.51.5
+      svelte: 5.53.5
     optionalDependencies:
       postcss: 8.4.31
       postcss-load-config: 3.1.1
       typescript: 4.9.5
 
-  svelte2tsx@0.1.193(svelte@5.51.5)(typescript@4.9.5):
+  svelte2tsx@0.1.193(svelte@5.53.5)(typescript@4.9.5):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.51.5
+      svelte: 5.53.5
       typescript: 4.9.5
 
-  svelte@5.51.5:
+  svelte@5.53.5:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -1745,7 +1745,7 @@ snapshots:
       '@types/estree': 1.0.8
       '@types/trusted-types': 2.0.7
       acorn: 8.16.0
-      aria-query: 5.3.2
+      aria-query: 5.3.1
       axobject-query: 4.1.0
       clsx: 2.1.1
       devalue: 5.6.3
