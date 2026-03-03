@@ -5,7 +5,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "svelte": "^4.2.19"
+    "svelte": "^5.53.5"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.4",
