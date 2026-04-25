@@ -17,22 +17,22 @@ importers:
         version: 1.0.0-next.34(svelte@5.53.5)(vite@6.4.2)
       autoprefixer:
         specifier: ^10.4.2
-        version: 10.4.2(postcss@8.4.31)
+        version: 10.4.2(postcss@8.5.10)
       daisyui:
         specifier: ^1.23.0
         version: 1.23.0
       postcss:
-        specifier: ^8.4.31
-        version: 8.4.31
+        specifier: ^8.5.10
+        version: 8.5.10
       svelte:
         specifier: ^5.53.5
         version: 5.53.5
       svelte-preprocess:
         specifier: ^4.10.1
-        version: 4.10.1(postcss-load-config@3.1.1)(postcss@8.4.31)(svelte@5.53.5)(typescript@4.9.5)
+        version: 4.10.1(postcss-load-config@3.1.1)(postcss@8.5.10)(svelte@5.53.5)(typescript@4.9.5)
       tailwindcss:
         specifier: ^3.0.12
-        version: 3.0.15(autoprefixer@10.4.2(postcss@8.4.31))(postcss@8.4.31)
+        version: 3.0.15(autoprefixer@10.4.2(postcss@8.5.10))(postcss@8.5.10)
       vite:
         specifier: ^6.4.2
         version: 6.4.2
@@ -742,11 +742,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanoid@3.3.6:
-    resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
   no-case@3.0.4:
     resolution: {integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg==}
 
@@ -836,12 +831,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.4.31:
-    resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
-    engines: {node: ^10 || ^12 || >=14}
-
-  postcss@8.5.9:
-    resolution: {integrity: sha512-7a70Nsot+EMX9fFU3064K/kdHWZqGVY+BADLyXc8Dfv+mTLLVl6JzJpPaCZ2kQL9gIJvKXSLMHhqdRRjwQeFtw==}
+  postcss@8.5.10:
+    resolution: {integrity: sha512-pMMHxBOZKFU6HgAZ4eyGnwXF/EvPGGqUr0MnZ5+99485wwW41kW91A4LOGxSHhgugZmSChL5AlElNdwlNgcnLQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   queue-microtask@1.2.3:
@@ -889,10 +880,6 @@ packages:
   sorcery@0.10.0:
     resolution: {integrity: sha512-R5ocFmKZQFfSTstfOtHjJuAwbpGyf9qjQa1egyhvXSbM7emjrtLXtGdZsDJDABC85YBfVvrOiGWKSYXPKdvP1g==}
     hasBin: true
-
-  source-map-js@1.0.2:
-    resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
-    engines: {node: '>=0.10.0'}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -1322,14 +1309,14 @@ snapshots:
 
   aria-query@5.3.1: {}
 
-  autoprefixer@10.4.2(postcss@8.4.31):
+  autoprefixer@10.4.2(postcss@8.5.10):
     dependencies:
       browserslist: 4.19.1
       caniuse-lite: 1.0.30001299
       fraction.js: 4.1.2
       normalize-range: 0.1.2
       picocolors: 1.0.0
-      postcss: 8.4.31
+      postcss: 8.5.10
       postcss-value-parser: 4.2.0
 
   axobject-query@4.1.0: {}
@@ -1353,7 +1340,7 @@ snapshots:
       electron-to-chromium: 1.4.46
       escalade: 3.1.1
       node-releases: 2.0.1
-      picocolors: 1.0.0
+      picocolors: 1.1.1
 
   buffer-crc32@0.2.13: {}
 
@@ -1622,8 +1609,6 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  nanoid@3.3.6: {}
-
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
@@ -1673,19 +1658,19 @@ snapshots:
 
   picomatch@4.0.4: {}
 
-  postcss-js@4.0.0(postcss@8.4.31):
+  postcss-js@4.0.0(postcss@8.5.10):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.31
+      postcss: 8.5.10
 
   postcss-load-config@3.1.1:
     dependencies:
       lilconfig: 2.0.4
       yaml: 1.10.2
 
-  postcss-nested@5.0.6(postcss@8.4.31):
+  postcss-nested@5.0.6(postcss@8.5.10):
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.5.10
       postcss-selector-parser: 6.0.8
 
   postcss-selector-parser@6.0.8:
@@ -1695,13 +1680,7 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.4.31:
-    dependencies:
-      nanoid: 3.3.6
-      picocolors: 1.0.0
-      source-map-js: 1.0.2
-
-  postcss@8.5.9:
+  postcss@8.5.10:
     dependencies:
       nanoid: 3.3.11
       picocolors: 1.1.1
@@ -1780,8 +1759,6 @@ snapshots:
       sander: 0.5.1
       sourcemap-codec: 1.4.8
 
-  source-map-js@1.0.2: {}
-
   source-map-js@1.2.1: {}
 
   sourcemap-codec@1.4.8: {}
@@ -1811,7 +1788,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  svelte-preprocess@4.10.1(postcss-load-config@3.1.1)(postcss@8.4.31)(svelte@5.53.5)(typescript@4.9.5):
+  svelte-preprocess@4.10.1(postcss-load-config@3.1.1)(postcss@8.5.10)(svelte@5.53.5)(typescript@4.9.5):
     dependencies:
       '@types/pug': 2.0.6
       '@types/sass': 1.43.1
@@ -1821,7 +1798,7 @@ snapshots:
       strip-indent: 3.0.0
       svelte: 5.53.5
     optionalDependencies:
-      postcss: 8.4.31
+      postcss: 8.5.10
       postcss-load-config: 3.1.1
       typescript: 4.9.5
 
@@ -1851,10 +1828,10 @@ snapshots:
       magic-string: 0.30.21
       zimmerframe: 1.1.4
 
-  tailwindcss@3.0.15(autoprefixer@10.4.2(postcss@8.4.31))(postcss@8.4.31):
+  tailwindcss@3.0.15(autoprefixer@10.4.2(postcss@8.5.10))(postcss@8.5.10):
     dependencies:
       arg: 5.0.1
-      autoprefixer: 10.4.2(postcss@8.4.31)
+      autoprefixer: 10.4.2(postcss@8.5.10)
       chalk: 4.1.2
       chokidar: 3.5.2
       color-name: 1.1.4
@@ -1867,10 +1844,10 @@ snapshots:
       is-glob: 4.0.3
       normalize-path: 3.0.0
       object-hash: 2.2.0
-      postcss: 8.4.31
-      postcss-js: 4.0.0(postcss@8.4.31)
+      postcss: 8.5.10
+      postcss-js: 4.0.0(postcss@8.5.10)
       postcss-load-config: 3.1.1
-      postcss-nested: 5.0.6(postcss@8.4.31)
+      postcss-nested: 5.0.6(postcss@8.5.10)
       postcss-selector-parser: 6.0.8
       postcss-value-parser: 4.2.0
       quick-lru: 5.1.1
@@ -1898,7 +1875,7 @@ snapshots:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.4)
       picomatch: 4.0.4
-      postcss: 8.5.9
+      postcss: 8.5.10
       rollup: 4.60.1
       tinyglobby: 0.2.16
     optionalDependencies:
