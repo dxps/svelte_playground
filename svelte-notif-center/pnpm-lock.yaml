@@ -9,15 +9,15 @@ importers:
   .:
     dependencies:
       svelte:
-        specifier: ^5.53.5
-        version: 5.53.5
+        specifier: ^5.55.7
+        version: 5.55.7
     devDependencies:
       '@babel/preset-typescript':
         specifier: ^7.10.4
         version: 7.10.4(@babel/core@7.10.4)
       '@snowpack/app-scripts-svelte':
         specifier: ^1.2.0
-        version: 1.2.0(svelte@5.53.5)
+        version: 1.2.0(svelte@5.55.7)
       '@snowpack/plugin-babel':
         specifier: ^1.4.0
         version: 1.4.0
@@ -26,7 +26,7 @@ importers:
         version: 5.11.0
       '@testing-library/svelte':
         specifier: ^3.0.0
-        version: 3.0.0(svelte@5.53.5)
+        version: 3.0.0(svelte@5.55.7)
       autoprefixer:
         specifier: ^9.8.5
         version: 9.8.5
@@ -729,8 +729,8 @@ packages:
   '@types/estree@0.0.39':
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
 
-  '@types/estree@1.0.8':
-    resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
+  '@types/estree@1.0.9':
+    resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
 
   '@types/graceful-fs@4.1.3':
     resolution: {integrity: sha512-AiHRaEB50LQg0pZmm659vNBb9f4SJ0qrAnteuzhSeAUcJKxoYgEnprg/83kppCnc2zvtCKbdZry1a5pVY3lOTQ==}
@@ -1423,8 +1423,8 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
 
-  devalue@5.6.3:
-    resolution: {integrity: sha512-nc7XjUU/2Lb+SvEFVGcWLiKkzfw8+qHI7zn8WYXKkLMgfGSHbgCEaR6bJpev8Cm6Rmrb19Gfd/tZvGqx9is3wg==}
+  devalue@5.8.1:
+    resolution: {integrity: sha512-4CXDYRBGqN+57wVJkuXBYmpAVUSg3L6JAQa/DFqm238G73E1wuyc/JhGQJzN7vUf/CMphYau2zXbfWzDR5aTEw==}
 
   diff-sequences@25.2.6:
     resolution: {integrity: sha512-Hq8o7+6GaZeoFjtpgvRBUknSXNeJiCx7V9Fr94ZMljNiCr9n9L8H8aJqgWOQiDDGdyn29fRNcDdRVJ5fdyihfg==}
@@ -1518,8 +1518,13 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  esrap@2.2.3:
-    resolution: {integrity: sha512-8fOS+GIGCQZl/ZIlhl59htOlms6U8NvX6ZYgYHpRU/b6tVSh3uHkOHZikl3D4cMbYM0JlpBe+p/BkZEi8J9XIQ==}
+  esrap@2.2.8:
+    resolution: {integrity: sha512-MPweq2EvEGj8jwOI7Hgycw/QIHzqA1EbAM8lG7p+FBfZbZq/hQ6h3AMsqnu/djzisH1KVWNzbb7LSgIVtMlPSg==}
+    peerDependencies:
+      '@typescript-eslint/types': ^8.2.0
+    peerDependenciesMeta:
+      '@typescript-eslint/types':
+        optional: true
 
   estraverse@4.3.0:
     resolution: {integrity: sha512-39nnKffWz8xN1BU/2c79n9nB9HDzo0niYUqx6xyqUnyoAnQyyWpOTdZEeiCch8BBu515t4wp9ZmgVfVhn9EBpw==}
@@ -3324,8 +3329,8 @@ packages:
     resolution: {integrity: sha512-zoE5/e+dnEijk6ASB6/qrK+oYdm2do1hjoLWrqUC/8WEIW1gbxFcKuBof7sW8ArN6e+AYvsE8HBGiVRWL/F5CA==}
     engines: {node: '>=8'}
 
-  svelte@5.53.5:
-    resolution: {integrity: sha512-YkqERnF05g8KLdDZwZrF8/i1eSbj6Eoat8Jjr2IfruZz9StLuBqo8sfCSzjosNKd+ZrQ8DkKZDjpO5y3ht1Pow==}
+  svelte@5.55.7:
+    resolution: {integrity: sha512-ymI5ykLPwIHW839E053FQbI1G+jnRFJEw3Kv5Y4njixVWywQBx+NUFpkkKyk5LIb36Fg9DVXSYpqiGekLD0hyw==}
     engines: {node: '>=18'}
 
   svgo@1.3.2:
@@ -3492,7 +3497,7 @@ packages:
 
   uuid@3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
-    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
   v8-to-istanbul@4.1.4:
@@ -4480,10 +4485,7 @@ snapshots:
       jest-runner: 25.5.4
       jest-runtime: 25.5.4
     transitivePeerDependencies:
-      - bufferutil
-      - canvas
       - supports-color
-      - utf-8-validate
 
   '@jest/transform@25.5.1':
     dependencies:
@@ -4599,15 +4601,15 @@ snapshots:
     dependencies:
       type-detect: 4.0.8
 
-  '@snowpack/app-scripts-svelte@1.2.0(svelte@5.53.5)':
+  '@snowpack/app-scripts-svelte@1.2.0(svelte@5.55.7)':
     dependencies:
       '@babel/core': 7.10.4
       '@babel/preset-env': 7.10.4(@babel/core@7.10.4)
       '@snowpack/plugin-dotenv': 1.1.1
-      '@snowpack/plugin-svelte': 1.2.0(svelte@5.53.5)
+      '@snowpack/plugin-svelte': 1.2.0(svelte@5.55.7)
       babel-jest: 25.5.1(@babel/core@7.10.4)
-      jest-transform-svelte: 2.1.1(svelte@5.53.5)
-      svelte: 5.53.5
+      jest-transform-svelte: 2.1.1(svelte@5.55.7)
+      svelte: 5.55.7
     transitivePeerDependencies:
       - supports-color
 
@@ -4622,9 +4624,9 @@ snapshots:
       dotenv: 8.2.0
       dotenv-expand: 5.1.0
 
-  '@snowpack/plugin-svelte@1.2.0(svelte@5.53.5)':
+  '@snowpack/plugin-svelte@1.2.0(svelte@5.55.7)':
     dependencies:
-      svelte: 5.53.5
+      svelte: 5.55.7
 
   '@sveltejs/acorn-typescript@1.0.9(acorn@8.16.0)':
     dependencies:
@@ -4655,10 +4657,10 @@ snapshots:
       lodash: 4.17.21
       redent: 3.0.0
 
-  '@testing-library/svelte@3.0.0(svelte@5.53.5)':
+  '@testing-library/svelte@3.0.0(svelte@5.55.7)':
     dependencies:
       '@testing-library/dom': 7.20.0
-      svelte: 5.53.5
+      svelte: 5.55.7
 
   '@types/aria-query@4.2.0': {}
 
@@ -4694,7 +4696,7 @@ snapshots:
 
   '@types/estree@0.0.39': {}
 
-  '@types/estree@1.0.8': {}
+  '@types/estree@1.0.9': {}
 
   '@types/graceful-fs@4.1.3':
     dependencies:
@@ -5459,7 +5461,7 @@ snapshots:
       defined: 1.0.0
       minimist: 1.2.8
 
-  devalue@5.6.3: {}
+  devalue@5.8.1: {}
 
   diff-sequences@25.2.6: {}
 
@@ -5555,7 +5557,7 @@ snapshots:
 
   esprima@4.0.1: {}
 
-  esrap@2.2.3:
+  esrap@2.2.8:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
@@ -6041,11 +6043,11 @@ snapshots:
 
   is-reference@1.2.1:
     dependencies:
-      '@types/estree': 1.0.8
+      '@types/estree': 1.0.9
 
   is-reference@3.0.3:
     dependencies:
-      '@types/estree': 1.0.8
+      '@types/estree': 1.0.9
 
   is-regex@1.1.0:
     dependencies:
@@ -6391,10 +6393,10 @@ snapshots:
       pretty-format: 25.5.0
       semver: 6.3.0
 
-  jest-transform-svelte@2.1.1(svelte@5.53.5):
+  jest-transform-svelte@2.1.1(svelte@5.55.7):
     dependencies:
       deasync: 0.1.20
-      svelte: 5.53.5
+      svelte: 5.55.7
 
   jest-util@25.5.0:
     dependencies:
@@ -7686,24 +7688,26 @@ snapshots:
       has-flag: 4.0.0
       supports-color: 7.1.0
 
-  svelte@5.53.5:
+  svelte@5.55.7:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/sourcemap-codec': 1.5.5
       '@sveltejs/acorn-typescript': 1.0.9(acorn@8.16.0)
-      '@types/estree': 1.0.8
+      '@types/estree': 1.0.9
       '@types/trusted-types': 2.0.7
       acorn: 8.16.0
       aria-query: 5.3.1
       axobject-query: 4.1.0
       clsx: 2.1.1
-      devalue: 5.6.3
+      devalue: 5.8.1
       esm-env: 1.2.2
-      esrap: 2.2.3
+      esrap: 2.2.8
       is-reference: 3.0.3
       locate-character: 3.0.0
       magic-string: 0.30.21
       zimmerframe: 1.1.4
+    transitivePeerDependencies:
+      - '@typescript-eslint/types'
 
   svgo@1.3.2:
     dependencies:
