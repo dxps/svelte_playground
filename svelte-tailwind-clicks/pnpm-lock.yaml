@@ -10,11 +10,11 @@ importers:
     dependencies:
       svelte-navigator:
         specifier: ^3.1.5
-        version: 3.1.5(svelte@5.53.5)(typescript@4.9.5)
+        version: 3.1.5(svelte@5.55.7)(typescript@4.9.5)
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^1.0.0-next.30
-        version: 1.0.0-next.34(svelte@5.53.5)(vite@6.4.2)
+        version: 1.0.0-next.34(svelte@5.55.7)(vite@6.4.2)
       autoprefixer:
         specifier: ^10.4.2
         version: 10.4.2(postcss@8.5.10)
@@ -25,11 +25,11 @@ importers:
         specifier: ^8.5.10
         version: 8.5.10
       svelte:
-        specifier: ^5.53.5
-        version: 5.53.5
+        specifier: ^5.55.7
+        version: 5.55.7
       svelte-preprocess:
         specifier: ^4.10.1
-        version: 4.10.1(postcss-load-config@3.1.1)(postcss@8.5.10)(svelte@5.53.5)(typescript@4.9.5)
+        version: 4.10.1(postcss-load-config@3.1.1)(postcss@8.5.10)(svelte@5.55.7)(typescript@4.9.5)
       tailwindcss:
         specifier: ^3.0.12
         version: 3.0.15(autoprefixer@10.4.2(postcss@8.5.10))(postcss@8.5.10)
@@ -383,6 +383,9 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
+  '@types/estree@1.0.9':
+    resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
+
   '@types/node@17.0.8':
     resolution: {integrity: sha512-YofkM6fGv4gDJq78g4j0mMuGMkZVxZDgtU0JRdx6FgiJDG+0fY0GKVolOV8WqVmEhLCXkQRjwDdKyPxJp/uucg==}
 
@@ -546,8 +549,8 @@ packages:
     engines: {node: '>=0.8.0'}
     hasBin: true
 
-  devalue@5.6.3:
-    resolution: {integrity: sha512-nc7XjUU/2Lb+SvEFVGcWLiKkzfw8+qHI7zn8WYXKkLMgfGSHbgCEaR6bJpev8Cm6Rmrb19Gfd/tZvGqx9is3wg==}
+  devalue@5.8.1:
+    resolution: {integrity: sha512-4CXDYRBGqN+57wVJkuXBYmpAVUSg3L6JAQa/DFqm238G73E1wuyc/JhGQJzN7vUf/CMphYau2zXbfWzDR5aTEw==}
 
   didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
@@ -580,8 +583,13 @@ packages:
   esm-env@1.2.2:
     resolution: {integrity: sha512-Epxrv+Nr/CaL4ZcFGPJIYLWFom+YeV1DqMLHJoEd9SYRxNbaFruBwfEX/kkHUJf55j2+TUbmDcmuilbP1TmXHA==}
 
-  esrap@2.2.3:
-    resolution: {integrity: sha512-8fOS+GIGCQZl/ZIlhl59htOlms6U8NvX6ZYgYHpRU/b6tVSh3uHkOHZikl3D4cMbYM0JlpBe+p/BkZEi8J9XIQ==}
+  esrap@2.2.8:
+    resolution: {integrity: sha512-MPweq2EvEGj8jwOI7Hgycw/QIHzqA1EbAM8lG7p+FBfZbZq/hQ6h3AMsqnu/djzisH1KVWNzbb7LSgIVtMlPSg==}
+    peerDependencies:
+      '@typescript-eslint/types': ^8.2.0
+    peerDependenciesMeta:
+      '@typescript-eslint/types':
+        optional: true
 
   estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
@@ -961,8 +969,8 @@ packages:
       svelte: ^3.24
       typescript: ^4.1.2
 
-  svelte@5.53.5:
-    resolution: {integrity: sha512-YkqERnF05g8KLdDZwZrF8/i1eSbj6Eoat8Jjr2IfruZz9StLuBqo8sfCSzjosNKd+ZrQ8DkKZDjpO5y3ht1Pow==}
+  svelte@5.55.7:
+    resolution: {integrity: sha512-ymI5ykLPwIHW839E053FQbI1G+jnRFJEw3Kv5Y4njixVWywQBx+NUFpkkKyk5LIb36Fg9DVXSYpqiGekLD0hyw==}
     engines: {node: '>=18'}
 
   tailwindcss@3.0.15:
@@ -1253,20 +1261,22 @@ snapshots:
     dependencies:
       acorn: 8.16.0
 
-  '@sveltejs/vite-plugin-svelte@1.0.0-next.34(svelte@5.53.5)(vite@6.4.2)':
+  '@sveltejs/vite-plugin-svelte@1.0.0-next.34(svelte@5.55.7)(vite@6.4.2)':
     dependencies:
       '@rollup/pluginutils': 4.1.2
       debug: 4.3.3
       kleur: 4.1.4
       magic-string: 0.25.7
       require-relative: 0.8.7
-      svelte: 5.53.5
-      svelte-hmr: 0.14.9(svelte@5.53.5)
+      svelte: 5.55.7
+      svelte-hmr: 0.14.9(svelte@5.55.7)
       vite: 6.4.2
     transitivePeerDependencies:
       - supports-color
 
   '@types/estree@1.0.8': {}
+
+  '@types/estree@1.0.9': {}
 
   '@types/node@17.0.8': {}
 
@@ -1417,7 +1427,7 @@ snapshots:
       defined: 1.0.0
       minimist: 1.2.8
 
-  devalue@5.6.3: {}
+  devalue@5.8.1: {}
 
   didyoumean@1.2.2: {}
 
@@ -1466,7 +1476,7 @@ snapshots:
 
   esm-env@1.2.2: {}
 
-  esrap@2.2.3:
+  esrap@2.2.8:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
 
@@ -1560,7 +1570,7 @@ snapshots:
 
   is-reference@3.0.3:
     dependencies:
-      '@types/estree': 1.0.8
+      '@types/estree': 1.0.9
 
   js-tokens@4.0.0: {}
 
@@ -1777,18 +1787,18 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-hmr@0.14.9(svelte@5.53.5):
+  svelte-hmr@0.14.9(svelte@5.55.7):
     dependencies:
-      svelte: 5.53.5
+      svelte: 5.55.7
 
-  svelte-navigator@3.1.5(svelte@5.53.5)(typescript@4.9.5):
+  svelte-navigator@3.1.5(svelte@5.55.7)(typescript@4.9.5):
     dependencies:
-      svelte: 5.53.5
-      svelte2tsx: 0.1.193(svelte@5.53.5)(typescript@4.9.5)
+      svelte: 5.55.7
+      svelte2tsx: 0.1.193(svelte@5.55.7)(typescript@4.9.5)
     transitivePeerDependencies:
       - typescript
 
-  svelte-preprocess@4.10.1(postcss-load-config@3.1.1)(postcss@8.5.10)(svelte@5.53.5)(typescript@4.9.5):
+  svelte-preprocess@4.10.1(postcss-load-config@3.1.1)(postcss@8.5.10)(svelte@5.55.7)(typescript@4.9.5):
     dependencies:
       '@types/pug': 2.0.6
       '@types/sass': 1.43.1
@@ -1796,37 +1806,39 @@ snapshots:
       magic-string: 0.25.7
       sorcery: 0.10.0
       strip-indent: 3.0.0
-      svelte: 5.53.5
+      svelte: 5.55.7
     optionalDependencies:
       postcss: 8.5.10
       postcss-load-config: 3.1.1
       typescript: 4.9.5
 
-  svelte2tsx@0.1.193(svelte@5.53.5)(typescript@4.9.5):
+  svelte2tsx@0.1.193(svelte@5.55.7)(typescript@4.9.5):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
-      svelte: 5.53.5
+      svelte: 5.55.7
       typescript: 4.9.5
 
-  svelte@5.53.5:
+  svelte@5.55.7:
     dependencies:
       '@jridgewell/remapping': 2.3.5
       '@jridgewell/sourcemap-codec': 1.5.5
       '@sveltejs/acorn-typescript': 1.0.9(acorn@8.16.0)
-      '@types/estree': 1.0.8
+      '@types/estree': 1.0.9
       '@types/trusted-types': 2.0.7
       acorn: 8.16.0
       aria-query: 5.3.1
       axobject-query: 4.1.0
       clsx: 2.1.1
-      devalue: 5.6.3
+      devalue: 5.8.1
       esm-env: 1.2.2
-      esrap: 2.2.3
+      esrap: 2.2.8
       is-reference: 3.0.3
       locate-character: 3.0.0
       magic-string: 0.30.21
       zimmerframe: 1.1.4
+    transitivePeerDependencies:
+      - '@typescript-eslint/types'
 
   tailwindcss@3.0.15(autoprefixer@10.4.2(postcss@8.5.10))(postcss@8.5.10):
     dependencies:
